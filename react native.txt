@@ -1,0 +1,40 @@
+For using Fonts
+
+must to do this on app.js
+import * as Font from 'expo-font';
+
+downloaded google fonts family from which copied  fonts to asstes/fonts folder(we made fonts folder)
+
+then this
+const getFonts = () => Font.loadAsync({
+  'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+  'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
+});
+
+
+since its async and we dont want to things get rendered before fonts get loaded so
+we used useState and if else to assured of getting fonts first then other stuff
+
+in video initial state was false but in my case only true let stuff to be rendered tho its not write
+
+
+this is the component of React Native on screen during loading
+it fires get Fonts func during loaded as it gets done we chngd state
+
+  <AppLoading
+
+  startAsync={getFonts}
+  onFinish={()=> setFontsLoaded(true)}
+  />
+
+
+
+-----
+React NaTIVE nAVIGATION
+
+WE ARE USING STACK NAVIG FOR NOW
+WORK SAME AS STACK For going forward or backward
+npm package
+react navigation(from its website) parent for navigation
+expo install react-native-screens react-native-safe-area-context
+
